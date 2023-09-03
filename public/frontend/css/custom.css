@@ -1,0 +1,39 @@
+.main-header .logo img{
+    max-width: 38% !important;
+    border-radius: 10px;
+}
+.sticky-header .logo img{
+    max-height: 38% !important;
+}
+.icon-box{
+    background-size: cover !important;
+}
+.testimonial-block{
+    cursor: pointer;
+}
+.titleactualite{
+    margin-bottom: 100px !important;
+}
+.main-header .info-btn{
+    font-size: 13px !important;
+}
+.main-menu .navigation > li.dropdown > a {
+    padding-right: 14px !important;
+    margin-right: -21px !important;
+    font-size: 14px !important;
+}
+.main-menu .navigation > li > ul > li > a{
+    font-size: 14px !important;
+}
+.page-title .title{
+    font-size: 50px !important;
+}
+.blockcontenttext{
+    display: flex !important;
+}
+.blog-details{
+    margin-top: -90px;
+}
+.ql-tooltip .ql-hidden{
+    display: none !important;
+}
