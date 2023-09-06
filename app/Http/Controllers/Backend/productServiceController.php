@@ -176,7 +176,7 @@ class productServiceController extends Controller
 
     /***************suppression des produits *************** */
     public function deleteProductMethod(Request $request){
-        if($this->can_access() ==  true){
+        if($this->can_access() ==  true || $this->can_access_admin() == true){
             $id = $request->input('id');
             $product = ProductService::where('id', $id)->first();
             Storage::disk('public')->delete($product->cover);

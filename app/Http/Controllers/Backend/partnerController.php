@@ -176,7 +176,7 @@ class partnerController extends Controller
 
     /***************suppression des partenaires *************** */
     public function deletePartnerMethod(Request $request){
-        if($this->can_access() ==  true){
+        if($this->can_access() ==  true || $this->can_access_admin() == true){
             $id = $request->input('id');
             $partner = Partners::where('id', $id)->first();
             Storage::disk('public')->delete($partner->cover);

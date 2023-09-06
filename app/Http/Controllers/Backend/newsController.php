@@ -176,7 +176,7 @@ class newsController extends Controller
 
     /***************suppression des news *************** */
     public function deleteNewsMethod(Request $request){
-        if($this->can_access() ==  true){
+        if($this->can_access() ==  true || $this->can_access_admin() == true){
             $id = $request->input('id');
             $news = News::where('id', $id)->first();
             Storage::disk('public')->delete($news->cover);

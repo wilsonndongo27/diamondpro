@@ -176,7 +176,7 @@ class bannerController extends Controller
 
     /***************suppression des banniere *************** */
     public function deleteBannerMethod(Request $request){
-        if($this->can_access() ==  true){
+        if($this->can_access() ==  true || $this->can_access_admin() == true){
             $id = $request->input('id');
             $banner = Banners::where('id', $id)->first();
             Storage::disk('public')->delete($banner->cover);

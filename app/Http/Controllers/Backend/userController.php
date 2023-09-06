@@ -54,7 +54,7 @@ class userController extends Controller
      */
     public function index()
     {
-        if($this->can_access() == true){
+        if($this->can_access() == true || $this->can_access_admin() == true){
             $countries = Country::get(["name","id"]);
             $users = User::all();
             $allusers = array();
@@ -88,7 +88,7 @@ class userController extends Controller
 
     /**Create User */
     public function createUserMethod(Request $request){
-        if($this->can_access() == true){
+        if($this->can_access() == true || $this->can_access_admin() == true){
             /**Controle de validation des inputs */
             $rules = array(
                 'name' => 'required',
@@ -168,7 +168,7 @@ class userController extends Controller
 
     /**************************Mise a jour des utilisateurs **************************** */
     public function updateUserMethod(Request $request){
-        if($this->can_access() == true){
+        if($this->can_access() == true || $this->can_access_admin() == true){
             $this->validate($request,[
                 'user_id' => 'required',
             ]);
@@ -216,7 +216,7 @@ class userController extends Controller
 
     /***************suppression des utilisateurs *************** */
     public function deleteUserMethod(Request $request){
-        if($this->can_access() ==  true){
+        if($this->can_access() ==  true || $this->can_access_admin() == true){
             $id = $request->input('id');
             $user = User::where('id', $id)->first();
             Storage::disk('public')->delete($user->pp);
@@ -229,7 +229,7 @@ class userController extends Controller
 
     /**************************Mise a jour du  status d'un utilisateur (Bloquer ou Débloquer) **************************** */
     public function statusUserMethod(Request $request){
-        if($this->can_access() == true){
+        if($this->can_access() == true || $this->can_access_admin() == true){
             $id = $request->input('id');
             /**get the current admin object */
             $user = User::where('id', $id)->first();
@@ -252,7 +252,7 @@ class userController extends Controller
 
     /**************************Mise a jour du  mot de passe **************************** */
     public function passwordUserMethod(Request $request){
-        if($this->can_access() == true){
+        if($this->can_access() == true || $this->can_access_admin() == true){
             $id = $request->input('id');
 
             /**get the current admin object */
