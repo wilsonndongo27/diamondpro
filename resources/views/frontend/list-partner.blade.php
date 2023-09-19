@@ -6,7 +6,7 @@
 			<div class="title-outer">
 				<h1 class="title">Notre Equipe</h1>
 				<ul class="page-breadcrumb">
-					<li><a href="index.html">Accueil</a></li>
+					<li><a href="index.html">Accueil</a></li> 
 					<li>Partenaire</li>
 				</ul>
 			</div>
