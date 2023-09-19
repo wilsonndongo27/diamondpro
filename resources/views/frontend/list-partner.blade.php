@@ -7,7 +7,7 @@
 				<h1 class="title">Nos Partenaires</h1>
 				<ul class="page-breadcrumb">
 					<li><a href="index.html">Accueil</a></li> 
-					<li>Partenaire</li>
+					<li>Partenaires</li>
 				</ul>
 			</div>
 		</div>
